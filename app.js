@@ -59,7 +59,7 @@ app.get('/article/new', (req, res) => {
     res.render("newarticle")
 })
 
-
+app.get('*', (req, res) => res.render("sorry"))
 
 app.listen(port, () => console.log("go to http://localhost:3000/"))
 

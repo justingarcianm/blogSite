@@ -2,34 +2,26 @@
 
 <main class="container">
 
-    <header>
-        <div class="container center-align">
-            <h1>Star wars: Galaxy of Heroes Blog</h1>
-            <p>for the holotable fanaitics</p>
-            <p>
-                <a href="/article/new" class="waves-effect waves-light btn">Add New Post</a>
-            </p>
-        </div>
-    </header>
 
-    <section class="row">
+    <header class="row">
         <div class="col s12">
             <div id="join">
                 <h2>Welcome to the Star wars: Galaxy of Heroes Blog </h2>
                 <h3>for the holotable fanaitics</h3>
-
                 <div class="buttons">
                     <a href="#" class="btn">Get Started</a>
                     <a href="#" class="btn">Learn More</a>
                 </div>
             </div>
         </div>
+    </header>
+    <section class="center-align">
+        <a href="/article/new" class="waves-effect waves-light btn">Add New Post</a>
     </section>
-
     <section class="row">
         <hr>
         <div class="col m8 s12" id="column1 container">
-            <h3>All Stories:</h3>
+            <h3>Our Stories:</h3>
             <% allArticles.forEach(function(article){ %>
             <article class="row">
                 <div class="col l7 m12">
@@ -39,9 +31,11 @@
                     <p>
                         <%= article.content %>
                     </p>
-                    <p><strong>author:
-                            <%= article.author %></strong></p>
+                    <h6>
+                        <%= article.author %>
+                    </h6>
                     <p>date posted:</p>
+                    <img class="circle" style="width:5%;" src="https://swgoh.gg/static/img/assets/tex.charui_thrawn.png">
                 </div>
                 <div class="col l4 m12">
                     <img class="responsive-img" src="<%= article.image %>">
@@ -51,28 +45,31 @@
         </div>
 
         <div class="col m4 sm12 container" id="column2">
-            <h5>You should also try</h5>
+            <h5>Need more?</h5>
             <hr>
             <ul>
-                <li><span>01</span> <a href="#">link</a></li>
-                <li><span>02</span> <a href="#">link</a></li>
-                <li><span>03</span> <a href="#">link</a></li>
-                <li><span>04</span> <a href="#">link</a></li>
+                <li><span>01</span> <a href="https://forums.galaxy-of-heroes.starwars.ea.com/" target="_blank">EA
+                        official Galaxy of
+                        Heroes Forums</a></li>
+                <li><span>02</span> <a href="https://swgoh.gg/" target="_blank">Heroes Database </a></li>
+                <li><span>03</span> <a href="https://www.reddit.com/r/SWGalaxyOfHeroes/" target="_blank">Visit the
+                        Subreddit!</a></li>
+                <li><span>04</span> <a href="https://swgohevents.com/" target="_blank">Previous and upcoming Events</a></li>
             </ul>
             <hr>
             <footer>
-                <a href="#">footer-link</a>
-                <a href="#">footer-link</a>
-                <a href="#">footer-link</a>
-                <a href="#">footer-link</a>
-                <a href="#">footer-link</a>
-                <a href="#">footer-link</a>
-                <a href="#">footer-link</a>
-                <a href="#">footer-link</a>
-                <a href="#">footer-link</a>
+                <a href="*">Help</a>
+                <a href="*">Status</a>
+                <a href="*">Writers</a>
+                <a href="*">Blog</a>
+                <a href="*">Career</a>
+                <a href="*">Privacy</a>
+                <a href="*">Terms</a>
+                <a href="*">About</a>
             </footer>
         </div>
     </section>
 
 </main>
+
 <% include partials/footer %>
