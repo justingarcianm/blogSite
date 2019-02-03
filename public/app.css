@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+    color: #222;
+}
+header {
+    background-color: #222;
+    color: #eee;
+}
+#join {
+    background-color: bisque;
+}
+#column1 {
+    padding: 20px;
+}
+
+#column2 span{
+    font-size: 3em;
+    padding-right: 10px;
+    color: rgb(0, 0, 0, 0.3)
+}
+form {
+    width: 30%;
+    margin: auto;
+}
