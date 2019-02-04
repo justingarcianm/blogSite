@@ -9,14 +9,14 @@
                 <h2>Welcome to the Star wars: Galaxy of Heroes Blog </h2>
                 <h3>for the holotable fanaitics</h3>
                 <div class="buttons">
-                    <a href="#" class="btn">Get Started</a>
-                    <a href="#" class="btn">Learn More</a>
+                    <a href="#" class="btn grey darken-4">Get Started</a>
+                    <a href="#" class="btn grey darken-4">Learn More</a>
                 </div>
             </div>
         </div>
     </header>
     <section class="center-align">
-        <a href="/article/new" class="waves-effect waves-light btn">Add New Post</a>
+        <a href="/article/new" class="waves-effect waves-light btn grey darken-4">Add New Post</a>
     </section>
     <section class="row">
         <hr>
@@ -40,11 +40,20 @@
                 <div class="col l4 m12">
                     <img class="responsive-img" src="<%= article.image %>">
                 </div>
+
             </article>
             <% }); %>
+            <div class="left-align">
+                <a href="*">Show All >></a>
+            </div>
         </div>
 
         <div class="col m4 sm12 container" id="column2">
+            <div id="twitter">
+                <a class="twitter-timeline" href="https://twitter.com/swgohgg?ref_src=twsrc%5Etfw" data-height="500">Tweets
+                    by swgohgg</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
             <h5>Need more?</h5>
             <hr>
             <ul>

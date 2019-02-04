@@ -6,10 +6,11 @@ body {
 }
 
 #join {
-    background-image: url("http://lordskunk.com/wp-content/uploads/2016/05/swgoh.jpg");
+    background-image: url("https://2.bp.blogspot.com/-WMc6f5aO4CA/Vxbn5R__RpI/AAAAAAAAAaU/4WQ0ChDk7JgsLCfM0UdFlADLnWaJySWLACLcB/s1600/swgoh5.jpg");
     background-position: center;
     background-size: cover;
     color: #eee;
+    height: 400px;
 }
 #column1 {
     padding: 20px;
@@ -34,4 +35,35 @@ footer a{
 form {
     width: 30%;
     margin: auto;
+}
+#banner {
+    background-image: url('https://us.v-cdn.net/6025736/uploads/SNG70YZ1UN0M.jpg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #eee;
+    height: 300px;
+}
+#banner a{
+    padding: 50px;
+}
+#banner i {
+    font-size: 2em;
+    color: #eee;
+    background-color: #111;
+    padding: 10px;
+    border-radius: 5px;
+    transition: ease 500ms;
+}
+
+#banner i:hover {
+    font-size: 2.5em;
+}
+#bottom {
+    color: #eee;
+    height: 40px;
+}
+
+section {
+    padding: 50px;
 }
