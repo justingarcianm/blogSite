@@ -3,14 +3,12 @@
 <main class="container">
 
 
-    <header class="row">
-        <div class="col s12">
-            <div id="join">
-                <h2>Welcome to the Star wars: Galaxy of Heroes Blog </h2>
-                <h3>for the holotable fanaitics</h3>
-                <div class="buttons">
-                    <a href="#" class="btn grey darken-4">Get Started</a>
-                    <a href="#" class="btn grey darken-4">Learn More</a>
+    <header id="join" class="row">
+        <div class="col m8 s12">
+            <h2 class="hide-on-small-only">Welcome to the Star wars: Galaxy of Heroes Blog </h2>
+            <div class="row">
+                <div class="col l6 m4">
+                    <h3 class="hide-on-med-and-down">for the holotable fanaitics</h3>
                 </div>
             </div>
         </div>
@@ -20,29 +18,31 @@
     </section>
     <section class="row">
         <hr>
-        <div class="col m8 s12" id="column1 container">
+        <div class="col m8 s12" id="column1">
             <h3>Our Stories:</h3>
-            <% allArticles.forEach(function(article){ %>
-            <article class="row">
-                <div class="col l7 m12">
-                    <h6>
-                        <%= article.title %>
-                    </h6>
-                    <p>
-                        <%= article.content %>
-                    </p>
-                    <h6>
-                        <%= article.author %>
-                    </h6>
-                    <p>date posted:</p>
-                    <img class="circle" style="width:5%;" src="https://swgoh.gg/static/img/assets/tex.charui_thrawn.png">
-                </div>
-                <div class="col l4 m12">
-                    <img class="responsive-img" src="<%= article.image %>">
-                </div>
+            <div id="scroll">
+                <% allArticles.forEach(function(article){ %>
+                <article class="row">
+                    <div class="col l7 m12">
+                        <h6>
+                            <%= article.title %>
+                        </h6>
+                        <p class="truncate">
+                            <%= article.content %>
+                        </p>
+                        <h6>
+                            <%= article.author %>
+                        </h6>
+                        <p>date posted:</p>
+                        <img class="circle" style="width:5%;" src="https://swgoh.gg/static/img/assets/tex.charui_thrawn.png">
+                    </div>
+                    <div class="col l4 m12">
+                        <img class="responsive-img" src="<%= article.image %>">
+                    </div>
 
-            </article>
-            <% }); %>
+                </article>
+                <% }); %>
+            </div>
             <div class="left-align">
                 <a href="*">Show All >></a>
             </div>

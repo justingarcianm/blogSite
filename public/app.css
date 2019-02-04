@@ -1,12 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Coda|Raleway');
 body {
     margin: 0;
     padding: 0;
     background-color: #eee;
     color: #222;
+    font-family: 'Raleway', sans-serif;
 }
-
+#join, #banner {
+    font-family: 'Coda', cursive;
+}
 #join {
-    background-image: url("https://2.bp.blogspot.com/-WMc6f5aO4CA/Vxbn5R__RpI/AAAAAAAAAaU/4WQ0ChDk7JgsLCfM0UdFlADLnWaJySWLACLcB/s1600/swgoh5.jpg");
+    background-image: url("http://swgohempirealliance.com/wp-content/uploads/2018/03/cropped-Screen-Shot-2017-07-01-at-4.08.35-PM-1.png");
     background-position: center;
     background-size: cover;
     color: #eee;
@@ -14,6 +18,11 @@ body {
 }
 #column1 {
     padding: 20px;
+}
+#scroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 800px;
 }
 #column1 h6 {
     font-weight: bold;
@@ -42,23 +51,17 @@ form {
     background-size: cover;
     background-repeat: no-repeat;
     color: #eee;
-    height: 300px;
+    height: 100%;
 }
-#banner a{
-    padding: 50px;
-}
+
 #banner i {
     font-size: 2em;
     color: #eee;
     background-color: #111;
     padding: 10px;
     border-radius: 5px;
-    transition: ease 500ms;
 }
 
-#banner i:hover {
-    font-size: 2.5em;
-}
 #bottom {
     color: #eee;
     height: 40px;
