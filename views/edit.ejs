@@ -2,27 +2,30 @@
 
 
 <div class="container">
-    <h1 class="center-align">Post here!</h1>
+    <h2 class="center-align">Edit
+        <%=foundArticle.title%>
+    </h2>
     <div class="row">
 
-        <form action="/blog" method="POST">
+        <form action="/blog/<%= foundArticle._id %>?_method=PUT" method="POST">
             <div class="row">
                 <div class="input-field">
-                    <input name="title" id="text" type="text" class="validate" data-length="100">
+                    <input name="foundArticle[title]" id="text" type="text" class="validate" value="<%=foundArticle.title%>"
+                        data-length="100">
                     <label for="title">Title</label>
 
                 </div>
             </div>
             <div class="row">
                 <div class="input-field">
-                    <input name="author" type="text" class="validate">
+                    <input name="foundArticle[author]" type="text" class="validate" value="<%=foundArticle.author%>">
                     <label for="author">Author</label>
                 </div>
             </div>
             <div class="row">
                 <div class="row">
                     <div class="input-field col s12">
-                        <textarea name="content" class="materialize-textarea"></textarea>
+                        <textarea name="foundArticle[content]" class="materialize-textarea"><%=foundArticle.content%></textarea>
                         <label for="textarea1">Content</label>
                         <span class="helper-text" data-error="wrong" data-success="right">copy and paste</span>
                     </div>
@@ -30,7 +33,7 @@
             </div>
             <div class="row">
                 <div class="input-field">
-                    <input name="image" type="text" class="validate">
+                    <input name="foundArticle[image]" type="text" class="validate" value="<%=foundArticle.image%>">
                     <label for="image">Image url</label>
                     <span class="helper-text" data-error="wrong" data-success="right">Right click on image and select
                         "Copy image location"</span>
@@ -43,7 +46,7 @@
                     </label>
                 </p>
                 <div class="center-align">
-                    <input class="btn grey darken-4" type="submit" value="Submit Post">
+                    <input class="btn grey darken-4" type="submit" value="Update Post">
                 </div>
             </div>
 
