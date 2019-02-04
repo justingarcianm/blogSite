@@ -10,6 +10,7 @@
                 <div class="input-field">
                     <input name="title" type="text" class="validate">
                     <label for="title">Title</label>
+                    <span class="helper-text" data-error="wrong" data-success="right">100 characters only</span>
                 </div>
             </div>
             <div class="row">
@@ -19,17 +20,20 @@
                 </div>
             </div>
             <div class="row">
-                <div class="input-field">
-                    <input name="content" type="text" class="validate">
-                    <label for="content">Content</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">copy and paste</span>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea name="content" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Content</label>
+                        <span class="helper-text" data-error="wrong" data-success="right">copy and paste</span>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field">
                     <input name="image" type="text" class="validate">
                     <label for="image">Image url</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">copy and paste</span>
+                    <span class="helper-text" data-error="wrong" data-success="right">Right click on image and select
+                        "Copy image location"</span>
                 </div>
                 <div class="center-align">
                     <input class="btn" type="submit" value="Post">
