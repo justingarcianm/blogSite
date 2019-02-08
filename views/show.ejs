@@ -26,6 +26,9 @@
             <img src="<%= foundArticle.image %>" class="responsive-img">
         </div>
         <a href="/blog/<%=foundArticle._id%>/edit" class="btn yellow darken-2">edit</a>
+        <form action="/blog/<%= foundArticle._id %>?_method=DELETE" method="POST">
+            <button class="btn red darken-2">delete</button>
+        </form>
     </div>
     <div class="row">
         <hr>
@@ -42,7 +45,7 @@
             </div>
         </div>
         <!-- New Comment Section -->
-        <div id="newComment">
+        <div id=" newComment">
             <form action="/blog/show" method="POST" class="col s12">
                 <div class="row">
                     <hr>

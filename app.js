@@ -6,12 +6,14 @@ const express = require("express"),
     port = 3000,
     bodyParser = require("body-parser"),
     mongoose = require("mongoose"),
-    methodOverride = require("method-override")
+    methodOverride = require("method-override"),
+    expressSanitizer = require("express-sanitizer")
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static("public"));
 app.set("view engine", "ejs");
-app.use(methodOverride("_method"))
+app.use(methodOverride("_method"));
+app.use(expressSanitizer());
 mongoose.connect("mongodb://localhost:27017/story", { useNewUrlParser: true });
 
 // SCHEMA SETUP
@@ -84,6 +86,17 @@ app.put('/blog/:id', (req, res) => {
             console.log(err)
         } else {
             res.redirect("/blog/" + req.params.id)
+        }
+    })
+})
+
+// Destroy Route
+app.delete('/blog/:id', (req, res) => {
+    Article.findByIdAndRemove(req.params.id, (err) => {
+        if (err) {
+            res.redirect("/blog")
+        } else {
+            res.redirect("/blog")
         }
     })
 })
