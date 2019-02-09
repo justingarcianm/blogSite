@@ -7,7 +7,11 @@ const express = require("express"),
     bodyParser = require("body-parser"),
     mongoose = require("mongoose"),
     methodOverride = require("method-override"),
-    expressSanitizer = require("express-sanitizer")
+    expressSanitizer = require("express-sanitizer"),
+    Article = require("./models/article"),
+    Comment = require("./models/comment")
+
+
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static("public"));
@@ -15,17 +19,6 @@ app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 app.use(expressSanitizer());
 mongoose.connect("mongodb://localhost:27017/story", { useNewUrlParser: true });
-
-// SCHEMA SETUP
-
-const articleSchema = new mongoose.Schema({
-    author: String,
-    image: String,
-    title: String,
-    content: String
-});
-
-const Article = mongoose.model("Article", articleSchema);
 
 // =======================================================
 //  ROUTES
