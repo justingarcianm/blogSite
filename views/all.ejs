@@ -1,0 +1,30 @@
+<% include partials/header %>
+<main class="container">
+    <h1>All of our stories</h1>
+    <hr>
+    <div class="row">
+        <% allArticles.forEach(function(article){ %>
+        <div class="col l4 m6 s12 card">
+            <a class="articleText" href="/blog/<%= article._id %>">
+                <%= article.title %>
+            </a>
+            <p class="truncate">
+                <%= article.content %>
+            </p>
+
+            <img class="circle" style="width: 30px;" src="https://swgoh.gg/static/img/assets/tex.charui_thrawn.png">
+            <span class="author">
+                <%= article.author %>
+            </span>
+
+            <p>date posted:</p>
+
+            <img class="responsive-img" src="<%= article.image %>">
+            <p><a href="/blog/<%= article._id %>" class="waves-effect waves-light btn grey darken-4">read
+                    more</a></p>
+        </div>
+        <% }) %>
+    </div>
+</main>
+
+<% include partials/footer %>

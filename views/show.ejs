@@ -16,6 +16,18 @@
             <p>date posted:</p>
         </div>
     </div>
+
+    <div class="row left-align">
+        <div class="col m1 s6">
+            <a href="/blog/<%=foundArticle._id%>/edit" class="btn yellow darken-2">edit</a>
+        </div>
+        <div class="col m1 s6">
+            <form action="/blog/<%= foundArticle._id %>?_method=DELETE" method="POST">
+                <button class="btn red darken-2">delete</button>
+            </form>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col m5">
             <p>
@@ -25,11 +37,8 @@
         <div class="col m7">
             <img src="<%= foundArticle.image %>" class="responsive-img">
         </div>
-        <a href="/blog/<%=foundArticle._id%>/edit" class="btn yellow darken-2">edit</a>
-        <form action="/blog/<%= foundArticle._id %>?_method=DELETE" method="POST">
-            <button class="btn red darken-2">delete</button>
-        </form>
     </div>
+
     <div class="row">
         <hr>
         <!-- Comments Section -->

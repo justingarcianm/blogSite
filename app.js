@@ -43,6 +43,16 @@ app.get('/blog', (req, res) => {
     })
 });
 
+app.get('/blog/all', (req, res) => {
+    Article.find({}, (err, allArticles) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.render("all", { allArticles })
+        }
+    })
+})
+
 // Create Route - add new article to DB
 app.post("/blog", (req, res) => {
     // get data from form and add to newArticle array
