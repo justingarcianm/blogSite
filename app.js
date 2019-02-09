@@ -46,6 +46,7 @@ app.get('/blog', (req, res) => {
 // Create Route - add new article to DB
 app.post("/blog", (req, res) => {
     // get data from form and add to newArticle array
+    req.body.foundArticle.content = req.sanitize(req.body.foundArticle.content)
     const author = req.body.author;
     const image = req.body.image;
     const title = req.body.title;
@@ -81,6 +82,7 @@ app.get('/blog/:id/edit', (req, res) => {
 
 // Update Route
 app.put('/blog/:id', (req, res) => {
+    req.body.foundArticle.content = req.sanitize(req.body.foundArticle.content)
     Article.findByIdAndUpdate(req.params.id, req.body.foundArticle, (err, updatedBlog) => {
         if (err) {
             console.log(err)

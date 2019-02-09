@@ -24,14 +24,15 @@
                 <% allArticles.forEach(function(article){ %>
                 <article class="row">
                     <div class="col l7 m12">
-                        <h6>
+                        <a class="articleText" href="/blog/<%= article._id %>">
                             <%= article.title %>
-                        </h6>
+                        </a>
                         <p class="truncate">
                             <%= article.content %>
                         </p>
 
-                        <img class="circle" style="width: 30px;" src="https://swgoh.gg/static/img/assets/tex.charui_thrawn.png">
+                        <img class="circle" style="width: 30px;"
+                            src="https://swgoh.gg/static/img/assets/tex.charui_thrawn.png">
                         <span class="author">
                             <%= article.author %>
                         </span>
@@ -54,7 +55,8 @@
 
         <div class="col m4 sm12 container" id="column2">
             <div id="twitter">
-                <a class="twitter-timeline" href="https://twitter.com/swgohgg?ref_src=twsrc%5Etfw" data-height="500">Tweets
+                <a class="twitter-timeline" href="https://twitter.com/swgohgg?ref_src=twsrc%5Etfw"
+                    data-height="500">Tweets
                     by swgohgg</a>
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
@@ -67,7 +69,8 @@
                 <li><span>02</span> <a href="https://swgoh.gg/" target="_blank">Heroes Database </a></li>
                 <li><span>03</span> <a href="https://www.reddit.com/r/SWGalaxyOfHeroes/" target="_blank">Visit the
                         Subreddit!</a></li>
-                <li><span>04</span> <a href="https://swgohevents.com/" target="_blank">Previous and upcoming Events</a></li>
+                <li><span>04</span> <a href="https://swgohevents.com/" target="_blank">Previous and upcoming Events</a>
+                </li>
             </ul>
             <hr>
             <footer>
