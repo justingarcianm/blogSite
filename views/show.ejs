@@ -45,28 +45,30 @@
         <div class="col s12">
             <h2>Comments:</h2>
             <div class="commentBox">
+                <% foundArticle.comments.forEach((comment)=>{  %>
                 <img class="circle" style="width: 30px;" src="https://swgoh.gg/static/img/assets/tex.charui_thrawn.png">
                 <span class="author">
-                    <%= foundArticle.author %> date posted
+                    <%= comment.author %> date posted
                 </span>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit provident obcaecati libero
-                    doloribus ad iusto totam rem necessitatibus nisi? Iusto?</p>
+                <p><%= comment.content %></p>
+                <% }) %>
             </div>
         </div>
         <!-- New Comment Section -->
-        <div id=" newComment">
-            <form action="/blog/show" method="POST" class="col s12">
+        <div id="newComment">
+            <form action="/blog/<%= foundArticle._id %>/comments" method="POST" class="col s12">
                 <div class="row">
                     <hr>
                     <div class="col m2 s12">
                         <p>add new comment:</p>
                     </div>
                     <div class="col m4 s12 input-field">
-                        <input type="text" class="validate">
+                        <input type="text" name="comment[author]" class="validate">
                         <label>Author</label>
                     </div>
                     <div class="col m6 s12 input-field">
-                        <textarea id="comment" class="materialize-textarea" data-length="150"></textarea>
+                        <textarea id="comment" name="comment[content]" class="materialize-textarea"
+                            data-length="150"></textarea>
                         <label>Comment</label>
                     </div>
                 </div>

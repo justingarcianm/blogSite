@@ -9,10 +9,11 @@ const express = require("express"),
     methodOverride = require("method-override"),
     expressSanitizer = require("express-sanitizer"),
     Article = require("./models/article"),
-    Comment = require("./models/comment")
+    Comment = require("./models/comment"),
+    seedDB = require("./seeds")
 
 
-
+// seedDB();
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static("public"));
 app.set("view engine", "ejs");
@@ -109,7 +110,7 @@ app.delete('/blog/:id', (req, res) => {
 // Show Route - shows more info on one article
 app.get('/blog/:id', (req, res) => {
     // find article with provided id
-    Article.findById(req.params.id, (err, foundArticle) => {
+    Article.findById(req.params.id).populate("comments").exec((err, foundArticle) => {
         if (err) {
             console.log(err)
         } else {
@@ -118,6 +119,37 @@ app.get('/blog/:id', (req, res) => {
         }
     })
 });
+
+
+// =============================
+// COMMENTS ROUTE
+// =============================
+
+app.get("/blog/:id/comments/new", (req, res) => res.send("new comment"))
+
+
+app.post("/blog/:id/comments", (req, res) => {
+    // look up blog using id
+    Article.findById(req.params.id, (err, article) => {
+        if (err) {
+            console.log(err);
+            res.redirect("/blog")
+        } else {
+            // create new comment
+            Comment.create(req.body.comment, (err, comment) => {
+                if (err) {
+                    console.log(err)
+                } else {
+                    // connect new comment to blog
+                    article.comments.push(comment);
+                    article.save();
+                    // redirect to show page
+                    res.redirect("/blog/" + article._id)
+                }
+            })
+        }
+    })
+})
 
 app.get('*', (req, res) => res.render("sorry"))
 
