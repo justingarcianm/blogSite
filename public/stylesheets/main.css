@@ -1,20 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Coda|Raleway');
-body {
+html {
     margin: 0;
     padding: 0;
     background-color: #eee;
     color: #222;
     font-family: 'Raleway', sans-serif;
 }
+
 #join, #banner {
     font-family: 'Coda', cursive;
 }
 #join {
-    background-image: url("http://swgohempirealliance.com/wp-content/uploads/2018/03/cropped-Screen-Shot-2017-07-01-at-4.08.35-PM-1.png");
-    background-position: center;
-    background-size: cover;
-    color: #eee;
-    height: 400px;
+    background-image: linear-gradient(#607d8b, #eee);
+    height: 500px;
+}
+#banner {
+    background-image: linear-gradient(#eee, #607d8b);
+}
+#newPostButton{
+    padding-bottom: 50px;
 }
 #column1 {
     padding: 20px;
@@ -46,11 +50,6 @@ form {
     margin: auto;
 }
 #banner {
-    background-image: url('https://us.v-cdn.net/6025736/uploads/SNG70YZ1UN0M.jpg');
-    background-position: top;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: #eee;
     height: 200px;
 }
 
@@ -67,9 +66,7 @@ form {
     height: 40px;
 }
 
-section {
-    padding: 50px 0;
-}
+
 .author {
     padding-left: 10px;
     font-weight: bold;

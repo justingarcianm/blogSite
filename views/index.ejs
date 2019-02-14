@@ -1,21 +1,22 @@
 <% include partials/header %>
-
+<header id="join" class="row blue-grey">
+    <div class="col s12 center-align white-text">
+        <h1>Welcome to the <br>HoloBoard </h1>
+        <div class="row">
+            <div class="col s12">
+                <h2>Where heroes prepare</h2>
+            </div>
+        </div>
+    </div>
+</header>
 <main class="container">
 
 
-    <header id="join" class="row">
-        <div class="col m8 s12">
-            <h2 class="hide-on-small-only">Welcome to the Star wars: Galaxy of Heroes Blog </h2>
-            <div class="row">
-                <div class="col l6 m4">
-                    <h3 class="hide-on-med-and-down">for the holotable fanaitics</h3>
-                </div>
-            </div>
-        </div>
-    </header>
-    <section class="center-align">
-        <a href="/blog/new" class="waves-effect waves-light btn grey darken-4">Add New Post</a>
+
+    <section class="center-align" id="newPostButton">
+        <a href="/blog/new" class="waves-effect waves-light btn blue-grey">Add New Post</a>
     </section>
+
     <section class="row">
         <hr>
         <div class="col m8 s12" id="column1">
@@ -41,7 +42,7 @@
                     </div>
                     <div class="col l4 m12">
                         <img class="responsive-img" src="<%= article.image %>">
-                        <p><a href="/blog/<%= article._id %>" class="waves-effect waves-light btn grey darken-4">read
+                        <p><a href="/blog/<%= article._id %>" class="waves-effect waves-light btn blue-grey">read
                                 more</a></p>
                     </div>
 
