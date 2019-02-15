@@ -10,6 +10,9 @@ const express = require("express"),
     expressSanitizer = require("express-sanitizer"),
     Article = require("./models/article"),
     Comment = require("./models/comment"),
+    passport = require('passport'),
+    localStrategy = require('passport-local'),
+    User = require('./models/user'),
     seedDB = require("./seeds")
 
 
