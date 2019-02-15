@@ -24,6 +24,18 @@ app.use(methodOverride("_method"));
 app.use(expressSanitizer());
 mongoose.connect("mongodb://localhost:27017/story", { useNewUrlParser: true });
 
+// PASSPORT CONFIG
+app.use(require("express-session")({
+    secret: "You've found me secret!",
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new localStrategy(User.authenticate));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 // =======================================================
 //  ROUTES
 // =======================================================
@@ -153,6 +165,27 @@ app.post("/blog/:id/comments", (req, res) => {
         }
     })
 })
+// ===================================================
+// AUTH ROUTES
+// ===================================================
+
+app.get("/register", (req, res) => {
+    res.render("register")
+});
+
+// Handle sign up logic
+app.post("/register", (req, res) => {
+    const newUser = new User({ username: req.body.username });
+    User.register(newUser, req.body.password, (err, user) => {
+        if (err) {
+            console.log(err);
+            return res.render("register")
+        }
+        passport.authenticate("local")(req, res, () => {
+            res.redirect("/blog");
+        })
+    })
+});
 
 app.get('*', (req, res) => res.render("sorry"))
 
