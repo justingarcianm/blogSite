@@ -36,6 +36,10 @@ passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use((req, res, next) => {
+    res.locals.currentUser = req.user;
+    next();
+})
 // =======================================================
 //  ROUTES
 // =======================================================
@@ -64,6 +68,7 @@ app.get('/blog/all', (req, res) => {
 
 // Create Route - add new article to DB
 app.post("/blog", (req, res) => {
+
     // get data from form and add to newArticle array
     req.body.foundArticle.content = req.sanitize(req.body.foundArticle.content)
     const author = req.body.author;
@@ -84,7 +89,7 @@ app.post("/blog", (req, res) => {
 
 // new Route - show form to create new article
 app.get('/blog/new', (req, res) => {
-    res.render("newarticle")
+    res.render("newarticle", { currentUser: req.user })
 })
 
 // Edit Route
