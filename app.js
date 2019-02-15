@@ -140,10 +140,7 @@ app.get('/blog/:id', (req, res) => {
 // COMMENTS ROUTE
 // =============================
 
-app.get("/blog/:id/comments/new", (req, res) => res.send("new comment"))
-
-
-app.post("/blog/:id/comments", (req, res) => {
+app.post("/blog/:id/comments", isLoggedIn, (req, res) => {
     // look up blog using id
     Article.findById(req.params.id, (err, article) => {
         if (err) {
@@ -207,6 +204,14 @@ app.get("/logout", (req, res) => {
 
 
 app.get('*', (req, res) => res.render("sorry"))
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect("/login");
+}
+
 
 app.listen(port, () => console.log("go to http://localhost:3000/blog"))
 
