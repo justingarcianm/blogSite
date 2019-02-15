@@ -32,7 +32,7 @@ app.use(require("express-session")({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(new localStrategy(User.authenticate));
+passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
@@ -186,6 +186,25 @@ app.post("/register", (req, res) => {
         })
     })
 });
+
+// Show Login Form
+app.get("/login", (req, res) => {
+    res.render("login")
+});
+// Handle login logic
+app.post("/login", passport.authenticate("local",
+    {
+        successRedirect: "/blog",
+        failureRedirect: "/login"
+    }), (req, res) => {
+    })
+
+// log out route
+app.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/blog")
+});
+
 
 app.get('*', (req, res) => res.render("sorry"))
 
