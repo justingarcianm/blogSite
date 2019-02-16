@@ -14,13 +14,13 @@
 
 <body>
     <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper blue-grey">
-                <a href="/blog" class="brand-logo white-text"> <i class="fab fa-jedi-order"></i></i>
-                    Holoboard</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i
-                        class="fas fa-bars white-text"></i></a>
-                <ul class="right hide-on-med-and-down">
+        <nav class="nav-extended blue-grey">
+            <div class="nav-wrapper">
+                <a href="/blog" class="brand-logo white-text"><i class="fab fa-jedi-order"></i>
+                    <span class="hide-on-small-only">Holoboard</span></a>
+            </div>
+            <div class="nav-content">
+                <ul class="right">
                     <%  if(!currentUser){ %>
                     <li><a class="white-text" href="/login">Sign in</a></li>
                     <li><a class="white-text" href="/register">Sign up</a></li>
