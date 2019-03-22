@@ -10,15 +10,23 @@ html {
 #join, #banner {
     font-family: 'Coda', cursive;
 }
-#join {
-    background-image: linear-gradient(#607d8b, #eee);
-    height: 500px;
+iframe {
+    margin: auto;
+    width: 80%;
+    height: 400px;
 }
-#banner {
-    background-image: linear-gradient(#eee, #607d8b);
+#join {
+    background-image: url('https://media.contentapi.ea.com/content/dam/eacom/en-us/migrated-images/2016/11/news-article-images-star-wars-goh-splash.jpg.adapt.crop191x100.1200w.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 600px;
+}
+#bg {
+    background-image: linear-gradient(to right, #222, rgba(0,0,0,0) );
+    height: 100%;
 }
 #newPostButton{
-    padding-bottom: 50px;
+    padding: 50px;
 }
 #column1 {
     padding: 20px;
@@ -41,36 +49,24 @@ html {
     padding-right: 10px;
     color: rgb(0, 0, 0, 0.3)
 }
-footer a{
-    color: #222;
-    padding: 5px;
-}
 form {
     width: 50%;
     margin: auto;
 }
+
 #banner {
-    height: 200px;
+    padding: 20px;
+    height: auto;
+    background-image: url('https://heavyeditorial.files.wordpress.com/2017/11/reyshj-web-adapt-crop16x9-1455w.jpg?quality=65&strip=all');
+    background-position: bottom;
+    background-size: cover;
+   color: #eee;
 }
 
-#banner i {
-    font-size: 2em;
-    color: #eee;
-    background-color: #111;
-    padding: 10px;
-    border-radius: 5px;
+#banner img {
+    width: 60%;
 }
 
-#bottom {
-    color: #eee;
-    height: 40px;
-}
-
-
-.author {
-    padding-left: 10px;
-    font-weight: bold;
-}
 ::-webkit-scrollbar {
     width: 2px;
   }
@@ -82,4 +78,4 @@ form {
       color: #222;
       font-weight: bold;
       font-size: 1.1em;
-  }
+}
