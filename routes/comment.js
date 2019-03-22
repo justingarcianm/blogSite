@@ -5,7 +5,7 @@ const express = require("express"),
 
 
 // Comments post
-router.post("/", isLoggedIn, (req, res) => {
+router.post("/", (req, res) => {
     // look up blog using id
     Article.findById(req.params.id, (err, article) => {
         if (err) {
@@ -28,12 +28,5 @@ router.post("/", isLoggedIn, (req, res) => {
     })
 })
 
-// middleware
-function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect("/login");
-}
 
 module.exports = router;

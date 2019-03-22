@@ -29,7 +29,6 @@ router.get('/all', (req, res) => {
 router.post("/", (req, res) => {
 
     // get data from form and add to newArticle array
-    req.body.foundArticle.content = req.sanitize(req.body.foundArticle.content)
     const author = req.body.author;
     const image = req.body.image;
     const title = req.body.title;
@@ -41,7 +40,7 @@ router.post("/", (req, res) => {
             console.log(err)
         } else {
             // redirect back to home page
-            res.redirect("/");
+            res.redirect("/blog");
         }
     })
 })
@@ -79,9 +78,9 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     Article.findByIdAndRemove(req.params.id, (err) => {
         if (err) {
-            res.redirect("/")
+            res.redirect("/blog")
         } else {
-            res.redirect("/")
+            res.redirect("/blog")
         }
     })
 })

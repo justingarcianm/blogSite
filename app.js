@@ -15,7 +15,7 @@ const express = require("express"),
 const blogRoutes = require('./routes/blog'),
     commentRoutes = require('./routes/comment'),
     indexRoutes = require('./routes/index');
-seedDB();
+// seedDB();
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
