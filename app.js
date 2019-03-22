@@ -21,7 +21,7 @@ app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 app.use(expressSanitizer());
-mongoose.connect("mongodb://localhost:27017/story", { useNewUrlParser: true });
+mongoose.connect("mongodb://justingarcianm:Stop@h3re@ds121406.mlab.com:21406/blogsite", { useNewUrlParser: true });
 
 // PASSPORT CONFIG
 app.use(require("express-session")({
