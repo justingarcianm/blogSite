@@ -21,7 +21,10 @@ app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 app.use(expressSanitizer());
-mongoose.connect("mongodb+srv://justingarcianm:Stop@h3re@cluster0-j0f1n.mongodb.net/test?retryWrites=true", { useNewUrlParser: true });
+
+const url = "mongodb+srv://user:12345@cluster0-j0f1n.mongodb.net/test?retryWrites=true" || "mongodb://localhost:27017/story"
+
+mongoose.connect(url, { useNewUrlParser: true });
 // mongoose.connect("mongodb://localhost:27017/story", { useNewUrlParser: true });
 
 
@@ -52,5 +55,3 @@ app.use(indexRoutes);
 
 app.listen(port, () => console.log("go to http://localhost:3000/blog"))
 
-
-mongoose.connection.once('open', () => console.log("connection has been made")).on('error', () => console.log("connection err", error))
