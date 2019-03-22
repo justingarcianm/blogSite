@@ -14,17 +14,6 @@
 
 <body>
     <div class="navbar-fixed">
-<<<<<<< HEAD
-        <nav>
-            <div class="nav-wrapper blue-grey">
-                <a href="/blog" class="brand-logo white-text"> <i class="fab fa-jedi-order"></i></i>
-                    Holoboard</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i
-                        class="fas fa-bars white-text"></i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a class="white-text" href="#">Sign in</a></li>
-                    <li><a class="white-text" href="#">Sign up</a></li>
-=======
         <nav class="nav-extended grey darken-4">
             <div class="nav-wrapper">
                 <a href="/blog" class="brand-logo white-text"><i class="fab fa-jedi-order"></i>
@@ -32,14 +21,8 @@
             </div>
             <div class="nav-content">
                 <ul class="right">
-                    <%  if(!currentUser){ %>
                     <li><a class="white-text" href="/login">Sign in</a></li>
                     <li><a class="white-text" href="/register">Sign up</a></li>
-                    <% } else { %>
-                    <li><a href="#">Hello there, <%= currentUser.username %></a> </li>
-                    <li><a class="white-text" href="/logout">Sign out</a></li>
-                    <% } %>
->>>>>>> bf32fb8a89ff56ec682c3fdb577eb81eb0327dca
                 </ul>
             </div>
         </nav>
